@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "3feed54f-77ec-430b-9590-d12baca41023",
+		"name": "TesteJava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21159367"
+	},
+	"item": [
+		{
+			"name": "Criar pessoa sem endereço",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Pessoa sem endereço\",\n    \"dataNascimento\": \"10/01/0223\",\n    \"enderecos\":[\n\n                ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/salvarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"salvarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Pessoa com endereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Pessoa com endereço\",\n    \"dataNascimento\": \"10/01/0223\",\n    \"enderecos\":[\n                    {\n                        \"logradouro\":\"Rua teste\",\n                        \"cep\":\"07700-150\",\n                        \"numero\":1234567,\n                        \"cidade\":\"Jundiai\"\n                    }\n                ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/salvarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"salvarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Pessoa - com ou sem endereço",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nome\": \"Pessoa Atualizada\",\n    \"dataNascimento\": \"10/01/2023\",\n    \"enderecos\":[\n    {\n        \"logradouro\":\"Rua teste 1\",\n        \"cep\":\"07700-150\",\n        \"numero\":1234567,\n        \"cidade\":\"Jundiai\"\n    },\n    {\n            \"logradouro\": \"Rua teste 2\",\n            \"cep\": \"07700-150\",\n            \"numero\": 1234567,\n            \"cidade\": \"Jundiai\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/atualizarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"atualizarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pessoa por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idPessoa",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/buscarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"buscarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listando Pessoa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/listarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"listarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Endereço para Pessoa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"logradouro\":\"Rua teste novo 2\",\n    \"cep\":\"07700-150\",\n    \"numero\":127,\n    \"cidade\":\"Jundiai\",\n    \"principal\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/salvar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"salvar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Endereço por pessoa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idPessoa",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/listarPorPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"listarPorPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Todos Enderecos da aplicação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/listarTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"listarTodos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Informa Endereço Principal da Pessoa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idPessoa",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/buscarPrincipal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"buscarPrincipal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar pessoa com os endereços",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idPessoa",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/pessoa/deletarPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"pessoa",
+						"deletarPessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Endereço",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idEndereco",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/deletar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"deletar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar endereço por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEndereco",
+							"value": "8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/buscar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"buscar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Endereço",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"logradouro\":\"Rua teste 4444\",\n    \"cep\":\"07700-150\",\n    \"numero\":1234567,\n    \"cidade\":\"Jundiai\",\n    \"principal\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/desafio-java/endereco/atualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"desafio-java",
+						"endereco",
+						"atualizar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
