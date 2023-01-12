@@ -1,0 +1,9 @@
+#Todos os testes foram feitos Via Postman
+
+#Não foram realizados testes unitarios em nenhum metodo, apenas na aplicação.
+
+#Para evitar erros nos testes importe com o seu Postman na Versão v2.1
+
+#Quando iniciada a aplicação, é necessario sempre salvar uma nova pessoa na base para iniciar os testes na aplicação.
+
+#Obrigado
